@@ -9,6 +9,8 @@ import About from './components/about';
 import Fullpage, { FullPageSections, FullpageSection, FullpageNavigation } from "@ap.cx/react-fullpage"
 import Sensor from './components/sensor1';
 
+// for check
+import AccGyro from './components/AccGyro';
 
 function App() {
   const [offset, setOffset] = useState(window.pageYOffset);
@@ -26,8 +28,8 @@ function App() {
 
   return (
     <>
-  
-
+    
+    
     <Fullpage>
       <FullpageNavigation/>
       <FullPageSections>

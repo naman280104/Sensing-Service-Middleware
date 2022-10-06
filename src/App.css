@@ -22,6 +22,7 @@ nav ul{
   width: 50vw;
   justify-content: space-around;
 }
+
 nav button{
   background-color: transparent;
   color: #e5d1a9;
@@ -181,3 +182,143 @@ video{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#mainpopup{
+  position: absolute;
+  top: -15vh;
+  left: 0vw;
+  bottom: -5vh;
+  right:0vw;
+  overflow: scroll;
+  /* height: 80vw;
+  width: 80vw; */
+  background-color:#2ec4b6;
+  display: inline-block;
+  
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+.closepopup,.czg{
+  height: fit-content;
+  width: fit-content;
+  position: relative;
+  float: right;
+  /* margin:2px 0px 0px 0px; */
+
+  /* padding:5px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 4px;
+  color: black;
+}
+.dropdown{
+  
+  display: flex;
+  text-align: center;
+  width: 19vw;
+}
+.dropdown ul{
+  
+  display: inline-flex;
+  list-style: none;
+  color: #fff;
+}
+.dropdown ul li{
+  background-color: #fff;
+  border:2px solid black;
+  border-radius: 3px;
+  justify-content: space-around;
+  width: auto;
+  padding: 7px;
+  margin:10px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.dropdown ul li a{
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 7px;
+}
+.dropdown ul li a{
+  color: black;
+}
+.all-dropdowns{
+  font-size: 17px;
+}
+.inouttime{
+  position: relative;
+  float: left;
+  left:350px;
+  top: -60px;
+}
+input{
+  height: 30px;
+  font-size: 18px;
+}
+input:focus{
+  outline: none;
+}
+input:hover{
+  border: 2px solid black;
+  border-radius: 4px;
+  margin: 0;
+}
+.Go{
+  position: relative;
+  top: -59px;
+  height: 30px;
+  width: 30px;
+  left: -80px;
+}
+.verticalscroll{
+  /* white-space: wrap; */
+  /* max-height: 60%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* overflow-block: scroll; */
+  /* overflow-wrap:  normal;   */
+}
+.horizontalscroll{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.chart{
+  background-color: white;
+  height: 17vw ;
+  width: 28vw;
+  border-radius: 8px;
+  margin-left: 1px;
+  margin-bottom: 20px;
+  position: relative;
+  /* cursor: -moz-zoom-in !important; */
+}
+
+.czg{
+  position: relative;
+  float: right;
+  /* padding: 10px; */
+  height: fit-content;
+  visibility:hidden;
+}
+.Line{
+  width: 50%;
+}
+.linediv{
+  height: 28vh;
+}
+button img{
+ 
+  width: 20px;
+  height: 20px;
+}
+
+.closepopup:hover,.czg:hover{
+  background-color:#fc3103;
+}
+
+
