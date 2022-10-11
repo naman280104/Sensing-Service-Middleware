@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./../logo.png"
-
+import About from "./about";
 
 export default function Navbar(props){
   return(
