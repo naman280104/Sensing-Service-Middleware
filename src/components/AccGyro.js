@@ -8,6 +8,7 @@ import Acc2 from './csvfiles/RAW_ACCELEROMETERS_D2.csv'
 import Acc3 from './csvfiles/RAW_ACCELEROMETERS_D3.csv'
 import { Line } from 'react-chartjs-2';
 import Papa from 'papaparse';
+import { useFetcher } from 'react-router-dom';
 function AccGyro(props) {
   let csvfile=Acc1
   if(props.day==1){
@@ -40,15 +41,20 @@ function AccGyro(props) {
   let end1=props.endtime
   // const [Start,setstart] = useState(Start1)
   // const [end,setend] = useState(end1)
-  
+ 
   const[usedata,setusedata] = useState([])
     ChartJS.register(...registerables);
     
     
     useEffect(()=>{
+
+      function sleep(time){
+        return new Promise ((resolve) => setTimeout(resolve, time));
+      }
+
       Papa.parse(csvfile, {
         download: true,
-        complete: function(results) {
+        complete: async function(results) {
           var tempdata = results.data;
           data=tempdata;
           flag=1
@@ -57,11 +63,16 @@ function AccGyro(props) {
           // setend(props.endtime)
           
           if(flag==1){
-            let j=1;
-            let k=data.length-2;
-            // console.log(Start, end, "time yahan hai");
-            while(parseFloat(data[j][0])<props.starttime) j++;
-            while(parseFloat(data[k][0])>props.endtime) k--;
+            let j = 0;
+            let k = 99;
+            while(true){// let j=1;
+            j++;
+            k++;
+            console.log('im here');
+            // let k=data.length-2;
+            // // console.log(Start, end, "time yahan hai");
+            // while(parseFloat(data[j][0])<props.starttime) j++;
+            // while(parseFloat(data[k][0])>props.endtime) k--;
       let label=[];
       let AccX=[];
       let AccY=[];
@@ -96,7 +107,21 @@ function AccGyro(props) {
       usedata.push(Roll);
       usedata.push(Pitch);
       usedata.push(Yaw);
+
+      await sleep(50);
       setusedata(usedata);
+      // await sleep();
+
+    //   setInterval(function() {
+    //     setusedata(usedata);
+    //  }, 5000)
+      
+        
+      if(!(k<data.length)){
+        j=1;
+        k=100;
+      }
+    }
     }
     
   }
@@ -106,6 +131,16 @@ function AccGyro(props) {
 // console.log("time here ",Start,end)
 
 
+// setInterval(()=>{
+//   setusedata(usedata);
+// }, 500);
+
+// useEffect(()=>{
+//   console.log("here\n");
+//   setInterval(()=>{
+//     setusedata(usedata);
+//   }, 500)
+// }, [usedata, props.day])
 
     
 
@@ -139,6 +174,7 @@ setexpand(true)}
 
 
   }
+
   const dataAccX = {
     labels:usedata[0],
     datasets: [
