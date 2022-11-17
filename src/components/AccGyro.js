@@ -33,7 +33,17 @@ function AccGyro(props) {
   //     break;
   // }
   const [expand,setexpand]=useState(false);
-  console.log(props)
+  // console.log(props)
+  let Range_Of_AccX=[]; 
+  let Range_Of_AccY=[]; 
+  let Range_Of_Altitude=[]; 
+  let Range_Of_AccXKF=[]; 
+  let Range_Of_AccYKF=[]; 
+  let Range_Of_AccZKF=[]; 
+  let Range_Of_Roll=[]; 
+  let Range_Of_Pitch=[]; 
+  let Range_Of_Yaw=[]; 
+
   // const[data,setdata] = useState('')
   var data=[];
   let flag=0;
@@ -63,16 +73,53 @@ function AccGyro(props) {
           // setend(props.endtime)
           
           if(flag==1){
+
+            // let ranges = [];
+
+            
+            Range_Of_AccX.push(Math.min(...data[2]));
+            Range_Of_AccX.push(Math.max(...data[2]));
+
+            Range_Of_AccY.push(Math.min(...data[3]));
+            Range_Of_AccY.push(Math.max(...data[3]));
+
+            Range_Of_Altitude.push(Math.min(...data[4]));
+            Range_Of_Altitude.push(Math.max(...data[4]));
+
+            Range_Of_AccXKF.push(Math.min(...data[5]));
+            Range_Of_AccXKF.push(Math.max(...data[5]));
+
+            Range_Of_AccYKF.push(Math.min(...data[6]));
+            Range_Of_AccYKF.push(Math.max(...data[6]));
+
+            Range_Of_AccZKF.push(Math.min(...data[7]));
+            Range_Of_AccZKF.push(Math.max(...data[7]));
+
+            Range_Of_Roll.push(Math.min(...data[8]));
+            Range_Of_Roll.push(Math.max(...data[8]));
+
+            Range_Of_Pitch.push(Math.min(...data[9]));
+            Range_Of_Pitch.push(Math.max(...data[9]));
+
+            Range_Of_Yaw.push(Math.min(...data[10]));
+            Range_Of_Yaw.push(Math.max(...data[10]));
+
+            console.log("RRRRRAAAAAAAANNNGGGGGEEEEEEE = ", Range_Of_AccX[0]);
+            
+            
             let j = 0;
             let k = 99;
+
             while(true){// let j=1;
             j++;
             k++;
-            console.log('im here');
+            // console.log('im here');
             // let k=data.length-2;
             // // console.log(Start, end, "time yahan hai");
             // while(parseFloat(data[j][0])<props.starttime) j++;
             // while(parseFloat(data[k][0])>props.endtime) k--;
+
+
       let label=[];
       let AccX=[];
       let AccY=[];
@@ -296,26 +343,51 @@ setexpand(true)}
 
 
 
+  //UNSCALED
+  // return (
+  //     <div className="verticalscroll">
+  //       <div className="horizontalscroll" id="hor"> 
+  //         <div className="chart" id="chart1" onClick={()=>expanddiv('chart1')}><button className="czg" id="czg1" onClick={()=>popupclose('chart1')} ><img src={png} alt="" /></button><div className='linediv' id="lineid1"><Line options={{maintainAspectRatio:false}} data={dataAccX}></Line></div></div>
+  //         <div className="chart" id="chart2" onClick={()=>expanddiv('chart2')}><button className="czg" id="czg2" onClick={()=>popupclose('chart2')} ><img src={png} alt="" /></button><div className='linediv' id="lineid2"><Line options={{maintainAspectRatio:false}} data={dataAccY}></Line></div></div>
+  //         <div className="chart" id="chart3" onClick={()=>expanddiv('chart3')}><button className="czg" id="czg3" onClick={()=>popupclose('chart3')} ><img src={png} alt="" /></button><div className='linediv' id="lineid3"><Line options={{maintainAspectRatio:false}} data={dataAltitude}></Line></div></div>
+  //       </div>
+  //       <div className="horizontalscroll"> 
+  //         <div className="chart" id="chart4" onClick={()=>expanddiv('chart4')}><button className="czg" id="czg4" onClick={()=>popupclose('chart4')} ><img src={png} alt="" /></button><div className='linediv' id="lineid4"><Line options={{maintainAspectRatio:false}} data={dataAccXKF}></Line></div></div>
+  //         <div className="chart" id="chart5" onClick={()=>expanddiv('chart5')}><button className="czg" id="czg5" onClick={()=>popupclose('chart5')} ><img src={png} alt="" /></button><div className='linediv' id="lineid5"><Line options={{maintainAspectRatio:false}} data={dataAccYKF}></Line></div></div>
+  //         <div className="chart" id="chart6" onClick={()=>expanddiv('chart6')}><button className="czg" id="czg6" onClick={()=>popupclose('chart6')} ><img src={png} alt="" /></button><div className='linediv' id="lineid6"><Line options={{maintainAspectRatio:false}} data={dataAccZKF}></Line></div></div>
+  //       </div>
+  //       <div className="horizontalscroll"> 
+  //         <div className="chart" id="chart7" onClick={()=>expanddiv('chart7')}><button className="czg" id="czg7" onClick={()=>popupclose('chart7')} ><img src={png} alt="" /></button><div className='linediv' id="lineid7"><Line options={{maintainAspectRatio:false}} data={dataRoll}></Line></div></div>
+  //         <div className="chart" id="chart8" onClick={()=>expanddiv('chart8')}><button className="czg" id="czg8" onClick={()=>popupclose('chart8')} ><img src={png} alt="" /></button><div className='linediv' id="lineid8"><Line options={{maintainAspectRatio:false}} data={dataPitch}></Line></div></div>
+  //         <div className="chart" id="chart9" onClick={()=>expanddiv('chart9')}><button className="czg" id="czg9" onClick={()=>popupclose('chart9')} ><img src={png} alt="" /></button><div className='linediv' id="lineid9"><Line options={{maintainAspectRatio:false}} data={dataYaw}></Line></div></div>
+  //       </div>
+  //     </div>
+  // )
 
+  //SCALED
   return (
-      <div className="verticalscroll">
-        <div className="horizontalscroll" id="hor"> 
-          <div className="chart" id="chart1" onClick={()=>expanddiv('chart1')}><button className="czg" id="czg1" onClick={()=>popupclose('chart1')} ><img src={png} alt="" /></button><div className='linediv' id="lineid1"><Line options={{maintainAspectRatio:false}} data={dataAccX}></Line></div></div>
-          <div className="chart" id="chart2" onClick={()=>expanddiv('chart2')}><button className="czg" id="czg2" onClick={()=>popupclose('chart2')} ><img src={png} alt="" /></button><div className='linediv' id="lineid2"><Line options={{maintainAspectRatio:false}} data={dataAccY}></Line></div></div>
-          <div className="chart" id="chart3" onClick={()=>expanddiv('chart3')}><button className="czg" id="czg3" onClick={()=>popupclose('chart3')} ><img src={png} alt="" /></button><div className='linediv' id="lineid3"><Line options={{maintainAspectRatio:false}} data={dataAltitude}></Line></div></div>
-        </div>
-        <div className="horizontalscroll"> 
-          <div className="chart" id="chart4" onClick={()=>expanddiv('chart4')}><button className="czg" id="czg4" onClick={()=>popupclose('chart4')} ><img src={png} alt="" /></button><div className='linediv' id="lineid4"><Line options={{maintainAspectRatio:false}} data={dataAccXKF}></Line></div></div>
-          <div className="chart" id="chart5" onClick={()=>expanddiv('chart5')}><button className="czg" id="czg5" onClick={()=>popupclose('chart5')} ><img src={png} alt="" /></button><div className='linediv' id="lineid5"><Line options={{maintainAspectRatio:false}} data={dataAccYKF}></Line></div></div>
-          <div className="chart" id="chart6" onClick={()=>expanddiv('chart6')}><button className="czg" id="czg6" onClick={()=>popupclose('chart6')} ><img src={png} alt="" /></button><div className='linediv' id="lineid6"><Line options={{maintainAspectRatio:false}} data={dataAccZKF}></Line></div></div>
-        </div>
-        <div className="horizontalscroll"> 
-          <div className="chart" id="chart7" onClick={()=>expanddiv('chart7')}><button className="czg" id="czg7" onClick={()=>popupclose('chart7')} ><img src={png} alt="" /></button><div className='linediv' id="lineid7"><Line options={{maintainAspectRatio:false}} data={dataRoll}></Line></div></div>
-          <div className="chart" id="chart8" onClick={()=>expanddiv('chart8')}><button className="czg" id="czg8" onClick={()=>popupclose('chart8')} ><img src={png} alt="" /></button><div className='linediv' id="lineid8"><Line options={{maintainAspectRatio:false}} data={dataPitch}></Line></div></div>
-          <div className="chart" id="chart9" onClick={()=>expanddiv('chart9')}><button className="czg" id="czg9" onClick={()=>popupclose('chart9')} ><img src={png} alt="" /></button><div className='linediv' id="lineid9"><Line options={{maintainAspectRatio:false}} data={dataYaw}></Line></div></div>
-        </div>
+    <div className="verticalscroll">
+      <div className="horizontalscroll" id="hor"> 
+        <div className="chart" id="chart1" onClick={()=>expanddiv('chart1')}><button className="czg" id="czg1" onClick={()=>popupclose('chart1')} ><img src={png} alt="" /></button><div className='linediv' id="lineid1"><Line options={{maintainAspectRatio:false, scales: {y: {max: 0.15, min: -0.15}}}} data={dataAccX}></Line></div></div>
+        <div className="chart" id="chart2" onClick={()=>expanddiv('chart2')}><button className="czg" id="czg2" onClick={()=>popupclose('chart2')} ><img src={png} alt="" /></button><div className='linediv' id="lineid2"><Line options={{maintainAspectRatio:false, scales: {y: {max: 0.2, min: -0.2, ticks: {stepSize : 0.02}}}}} data={dataAccY}></Line></div></div>
+        <div className="chart" id="chart3" onClick={()=>expanddiv('chart3')}><button className="czg" id="czg3" onClick={()=>popupclose('chart3')} ><img src={png} alt="" /></button><div className='linediv' id="lineid3"><Line options={{maintainAspectRatio:false, scales: {y: {max: 0.2, min: -0.2, ticks: {stepSize : 0.02}}}}} data={dataAltitude}></Line></div></div>
       </div>
+      <div className="horizontalscroll"> 
+        <div className="chart" id="chart4" onClick={()=>expanddiv('chart4')}><button className="czg" id="czg4" onClick={()=>popupclose('chart4')} ><img src={png} alt="" /></button><div className='linediv' id="lineid4"><Line options={{maintainAspectRatio:false, scales: {y: {max: 0.2, min: -0.2, ticks: {stepSize : 0.02}}}}} data={dataAccXKF}></Line></div></div>
+        <div className="chart" id="chart5" onClick={()=>expanddiv('chart5')}><button className="czg" id="czg5" onClick={()=>popupclose('chart5')} ><img src={png} alt="" /></button><div className='linediv' id="lineid5"><Line options={{maintainAspectRatio:false, scales: {y: {max: 0.2, min: -0.2, ticks: {stepSize : 0.02}}}}} data={dataAccYKF}></Line></div></div>
+        <div className="chart" id="chart6" onClick={()=>expanddiv('chart6')}><button className="czg" id="czg6" onClick={()=>popupclose('chart6')} ><img src={png} alt="" /></button><div className='linediv' id="lineid6"><Line options={{maintainAspectRatio:false, scales: {y: {max: 0.2, min: -0.2, ticks: {stepSize : 0.02}}}}} data={dataAccZKF}></Line></div></div>
+      </div>
+      <div className="horizontalscroll"> 
+        <div className="chart" id="chart7" onClick={()=>expanddiv('chart7')}><button className="czg" id="czg7" onClick={()=>popupclose('chart7')} ><img src={png} alt="" /></button><div className='linediv' id="lineid7"><Line options={{maintainAspectRatio:false, scales: {y: {max: -1.3, min: -1.8, ticks: {stepSize : 0.05}}}}} data={dataRoll}></Line></div></div>
+        <div className="chart" id="chart8" onClick={()=>expanddiv('chart8')}><button className="czg" id="czg8" onClick={()=>popupclose('chart8')} ><img src={png} alt="" /></button><div className='linediv' id="lineid8"><Line options={{maintainAspectRatio:false, scales: {y: {max: 0.2, min: -0.2, ticks: {stepSize : 0.02}}}}} data={dataPitch}></Line></div></div>
+        <div className="chart" id="chart9" onClick={()=>expanddiv('chart9')}><button className="czg" id="czg9" onClick={()=>popupclose('chart9')} ><img src={png} alt="" /></button><div className='linediv' id="lineid9"><Line options={{maintainAspectRatio:false, scales: {y: {max: 1, min: -1.5, ticks: {stepSize : 0.2}}}}} data={dataYaw}></Line></div></div>
+      </div>
+    </div>
   )
+
+
+
+
 }
 
 export default AccGyro
