@@ -52,13 +52,13 @@ function App() {
             </div>    
         </FullpageSection>
 
-        <FullpageSection>
+        {/* <FullpageSection>
           <About></About>      
-        </FullpageSection>
+        </FullpageSection> */}
 
         <FullpageSection>
           <Sensor></Sensor>
-        </FullpageSection>
+      </FullpageSection>
 
 
       </FullPageSections>
