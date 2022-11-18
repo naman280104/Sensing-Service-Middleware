@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import csvfile1 from './csvfiles/Copy of Output.csv'
 import AccGyro from "./AccGyro";
 import Linechart from "./Linechart";
 import png from './images/close_icon.png'

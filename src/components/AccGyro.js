@@ -18,7 +18,7 @@ function AccGyro(props) {
     csvfile=Acc2;
   }
   if(props.day==3){
-    csvfile=Acc3;
+    csvfile=Acc2;
   }
   // console.log(props.day)
   // switch (props.day){
@@ -34,15 +34,15 @@ function AccGyro(props) {
   // }
   const [expand,setexpand]=useState(false);
   // console.log(props)
-  let Range_Of_AccX=[]; 
-  let Range_Of_AccY=[]; 
-  let Range_Of_Altitude=[]; 
-  let Range_Of_AccXKF=[]; 
-  let Range_Of_AccYKF=[]; 
-  let Range_Of_AccZKF=[]; 
-  let Range_Of_Roll=[]; 
-  let Range_Of_Pitch=[]; 
-  let Range_Of_Yaw=[]; 
+  // let Range_Of_AccX=[]; 
+  // let Range_Of_AccY=[]; 
+  // let Range_Of_Altitude=[]; 
+  // let Range_Of_AccXKF=[]; 
+  // let Range_Of_AccYKF=[]; 
+  // let Range_Of_AccZKF=[]; 
+  // let Range_Of_Roll=[]; 
+  // let Range_Of_Pitch=[]; 
+  // let Range_Of_Yaw=[]; 
 
   // const[data,setdata] = useState('')
   var data=[];
@@ -77,34 +77,34 @@ function AccGyro(props) {
             // let ranges = [];
 
             
-            Range_Of_AccX.push(Math.min(...data[2]));
-            Range_Of_AccX.push(Math.max(...data[2]));
+            // Range_Of_AccX.push(Math.min(...data[2]));
+            // Range_Of_AccX.push(Math.max(...data[2]));
 
-            Range_Of_AccY.push(Math.min(...data[3]));
-            Range_Of_AccY.push(Math.max(...data[3]));
+            // Range_Of_AccY.push(Math.min(...data[3]));
+            // Range_Of_AccY.push(Math.max(...data[3]));
 
-            Range_Of_Altitude.push(Math.min(...data[4]));
-            Range_Of_Altitude.push(Math.max(...data[4]));
+            // Range_Of_Altitude.push(Math.min(...data[4]));
+            // Range_Of_Altitude.push(Math.max(...data[4]));
 
-            Range_Of_AccXKF.push(Math.min(...data[5]));
-            Range_Of_AccXKF.push(Math.max(...data[5]));
+            // Range_Of_AccXKF.push(Math.min(...data[5]));
+            // Range_Of_AccXKF.push(Math.max(...data[5]));
 
-            Range_Of_AccYKF.push(Math.min(...data[6]));
-            Range_Of_AccYKF.push(Math.max(...data[6]));
+            // Range_Of_AccYKF.push(Math.min(...data[6]));
+            // Range_Of_AccYKF.push(Math.max(...data[6]));
 
-            Range_Of_AccZKF.push(Math.min(...data[7]));
-            Range_Of_AccZKF.push(Math.max(...data[7]));
+            // Range_Of_AccZKF.push(Math.min(...data[7]));
+            // Range_Of_AccZKF.push(Math.max(...data[7]));
 
-            Range_Of_Roll.push(Math.min(...data[8]));
-            Range_Of_Roll.push(Math.max(...data[8]));
+            // Range_Of_Roll.push(Math.min(...data[8]));
+            // Range_Of_Roll.push(Math.max(...data[8]));
 
-            Range_Of_Pitch.push(Math.min(...data[9]));
-            Range_Of_Pitch.push(Math.max(...data[9]));
+            // Range_Of_Pitch.push(Math.min(...data[9]));
+            // Range_Of_Pitch.push(Math.max(...data[9]));
 
-            Range_Of_Yaw.push(Math.min(...data[10]));
-            Range_Of_Yaw.push(Math.max(...data[10]));
+            // Range_Of_Yaw.push(Math.min(...data[10]));
+            // Range_Of_Yaw.push(Math.max(...data[10]));
 
-            console.log("RRRRRAAAAAAAANNNGGGGGEEEEEEE = ", Range_Of_AccX[0]);
+            // console.log("RRRRRAAAAAAAANNNGGGGGEEEEEEE = ", Range_Of_AccX[0]);
             
             
             let j = 0;
